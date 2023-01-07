@@ -1,0 +1,15 @@
+{
+  "importMap": "./import_map.json",
+  "tasks": {
+    "debug": "deno run -A --unstable --watch --config=deno.json main.ts",
+    "server": "deno run -A --config=deno.json ./server/server.ts",
+    "client": "deno run -A --config=deno.json --unstable ./client/client.ts"
+  },
+  
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "https://esm.sh/preact"
+  },
+
+  "lock": false
+}

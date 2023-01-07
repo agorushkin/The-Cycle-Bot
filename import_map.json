@@ -1,0 +1,17 @@
+{
+  "imports": {
+    "/": "./",
+    "./": "./",
+
+    "std/": "https://deno.land/std@0.119.0/",
+    "harmony": "https://code.harmony.rocks/v2.5.0/mod.ts",
+    "http-server": "https://agorushkin.deno.dev/modules/http-server",
+
+    "firebase/app": "https://esm.sh/firebase/app",
+    "firestore": "https://esm.sh/firebase/firestore",
+
+    "preact": "https://esm.sh/preact",
+    "preact/": "https://esm.sh/preact/",
+    "preact/render": "https://esm.sh/preact-render-to-string"
+  }
+}
