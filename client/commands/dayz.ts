@@ -2,11 +2,11 @@ import { Embed } from 'harmony';
 
 import { Command } from '/client/commands/command.ts';
 
-import { sendDayZRequest } from '/core/dayz/sendDayZRequest.ts';
-import { dayZFormatter } from '/core/dayz/dayZFormatter.ts'
+import { fetchServerInfo } from '/core/dayz/fetchServerInfo.ts';
+import { dayZFormatter } from '/core/dayz/dayZFormatter.ts';
 
 export const DayZQueryCommand = Command('dzs|dayz', async (message) => {
-  const data = await sendDayZRequest();
+  const data = await fetchServerInfo();
 
   if (!data) {
     const embed = new Embed({

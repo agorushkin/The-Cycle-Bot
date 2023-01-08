@@ -1,13 +1,13 @@
 import { Client } from 'harmony';
 
-import { sendDayZRequest } from '/core/dayz/sendDayZRequest.ts';
+import { fetchServerInfo } from '/core/dayz/fetchServerInfo.ts';
 import { dayZFormatter } from '/core/dayz/dayZFormatter.ts';
 
 const PRESENCE = [ [ 'PLAYER_COUNT', 'TIME', 'ADDRESS' ], 0 ] as [ string[], number ];
 
 export const startClientPresenceUpdate = (client: Client) => {
   setInterval(async () => {
-    const data = await sendDayZRequest();
+    const data = await fetchServerInfo();
 
     if (data === null) return;
 

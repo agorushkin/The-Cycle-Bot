@@ -2,7 +2,7 @@ import { Config } from '/config.ts';
 
 import { RawDayZResponse, DayZResponse } from '/core/dayz/types.d.ts';
 
-export const sendDayZRequest = async (): Promise<DayZResponse | null> => {
+export const fetchServerInfo = async (): Promise<DayZResponse | null> => {
   const response = await fetch(`https://data.cftools.cloud/v1/gameserver/${ Config.game.hash }`);
   const data = await response.json() as RawDayZResponse;
   

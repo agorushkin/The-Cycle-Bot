@@ -1,13 +1,13 @@
 import { db } from '/main.ts';
 import { doc, getDoc, updateDoc, setDoc } from 'firestore';
 
-import { fetchDiscordUserData } from './fetchDiscordUserData.ts';
+import { fetchUserData } from './fetchUserData.ts';
 
 import { client } from '/client/main.ts';
 
 export const handleAccessGrant = async (token: string) => {
-  const connections = await fetchDiscordUserData<{ verified: boolean, type: string, id: string }[]>('users/@me/connections', token);
-  const identity    = await fetchDiscordUserData<{ id: string }>('users/@me', token);
+  const connections = await fetchUserData<{ verified: boolean, type: string, id: string }[]>('users/@me/connections', token);
+  const identity    = await fetchUserData<{ id: string }>('users/@me', token);
 
   if (!connections || !identity) return;
 

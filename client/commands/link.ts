@@ -8,7 +8,7 @@ export const LinkSteamAccountCommand = Command('link', (message) => {
     type: 'BUTTON',
     label: 'Link Steam Account',
     style: 'LINK',
-    url: Config.auth.OAuth2URL,
+    url: Config.auth.authURL,
   };
 
   const base: MessageComponentData = {
